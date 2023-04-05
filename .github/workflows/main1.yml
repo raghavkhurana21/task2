@@ -40,11 +40,11 @@ jobs:
       
       - name: terraform init  
         run: |
-          cd mainfiles
+          cd main.tf
           terraform init -reconfigure -backend-config="bucket=${{env.buck}}" -backend-config="key=${{env.TFSTATE_FILE}}"
       
       - name: terraform plan
         run: |
-          cd mainfiles
+          cd main.tf
           terraform plan -out tfplan
   
