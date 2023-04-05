@@ -37,9 +37,9 @@ jobs:
       
       - name: terraform init  
         run: |
-          cd mainfiles
+          
           terraform init -reconfigure -backend-config="bucket=${{env.buck}}" -backend-config="key=${{env.TFSTATE_FILE}}"
       - name: terraform destroy
         run: |
-          cd mainfiles
+          
           terraform destroy -auto-approve
