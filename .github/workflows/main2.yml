@@ -40,5 +40,5 @@ jobs:
       - name: terraform apply  
       
         run: |
-          cd mainfiles
-          terraform apply -auto-approve
+         
+          terraform apply tfplan
