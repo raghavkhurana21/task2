@@ -36,9 +36,18 @@ jobs:
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           Aws-region: ${{env.aws-region}}
+
       
-      - name: terraform apply  
-      
+      - name: terraform init  
         run: |
-         
-          terraform apply tfplan
+          
+          terraform init -reconfigure -backend-config="bucket=${{env.buck}}" -backend-config="key=${{env.TFSTATE_FILE}}"
+      
+      - name: terraform plan
+        run: |
+          
+          terraform plan -out tfplan
+      - name: terraform plan
+        run: |
+          
+          terraform apply -auto-approve
