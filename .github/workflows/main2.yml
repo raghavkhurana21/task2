@@ -37,6 +37,8 @@ jobs:
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           Aws-region: ${{env.aws-region}}
       
+      - name: terraform apply  
+      
         run: |
           cd mainfiles
-          terraform apply tfplan
+          terraform apply -auto-approve
