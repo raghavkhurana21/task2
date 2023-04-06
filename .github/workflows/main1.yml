@@ -9,7 +9,7 @@ on:
     
 env:
   buck: test-bucket2233
-  TFSTATE_FILE: bucket.tfstate
+#   TFSTATE_FILE: bucket.tfstate
   
   aws-region: ${{github.event.inputs.aws-region-name}}
 
@@ -41,7 +41,7 @@ jobs:
       - name: terraform init  
         run: |
           
-          terraform init -reconfigure -backend-config="bucket=${{env.buck}}" -backend-config="key=${{env.TFSTATE_FILE}}"
+          terraform init #-reconfigure -backend-config="bucket=${{env.buck}}" -backend-config="key=${{env.TFSTATE_FILE}}"
       
       - name: terraform plan
         run: |
