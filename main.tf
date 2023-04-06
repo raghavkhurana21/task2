@@ -64,7 +64,7 @@ resource "aws_route_table_association" "subnet_association" {
 resource "aws_instance" "web" {
   ami             = "ami-0376ec8eacdf70aae"
   instance_type   = "t2.micro"
-  key_name      = aws_key_pair.tf-key-pair3.key_name
+  key_name      = aws_key_pair.tf-key-pairr.key_name
   subnet_id       = aws_subnet.subnet.id
   security_groups = [aws_security_group.raghav_sgroup.id]
 
@@ -99,8 +99,8 @@ resource "aws_instance" "web" {
     Purpose = "terraform task"
   }
 }
-resource "aws_key_pair" "tf-key-pair3" {
-key_name = "my-key-pair3"
+resource "aws_key_pair" "tf-key-pairr" {
+key_name = "my-key-pairr"
 public_key = tls_private_key.rsa.public_key_openssh
 }
 resource "tls_private_key" "rsa" {
