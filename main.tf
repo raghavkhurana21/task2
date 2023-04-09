@@ -4,11 +4,7 @@ resource "aws_vpc" "raghav_vpc" {
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
 
-  tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  tags = var.tags
 }
 
 resource "aws_subnet" "subnet" {
@@ -17,11 +13,7 @@ resource "aws_subnet" "subnet" {
   availability_zone       = "ap-south-1a"
   map_public_ip_on_launch = true
 
-  tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  tags = var.tags
 }
 
 # resource "aws_eip" "ip-test-env" {
@@ -32,11 +24,7 @@ resource "aws_subnet" "subnet" {
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.raghav_vpc.id
 
-  tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  tags = var.tags
 
 }
 
@@ -49,11 +37,7 @@ resource "aws_route_table" "public_rt" {
     gateway_id = aws_internet_gateway.gw.id
   }
 
-  tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  tags = var.tags
 }
 resource "aws_route_table_association" "subnet_association" {
   subnet_id      = aws_subnet.subnet.id
@@ -82,11 +66,12 @@ resource "aws_network_acl" "main" {
     to_port    = 22
   }
 
-  tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  tags =var.tags
+#    {
+#     Name    = "vpc-raghav"
+#     Owner   = "raghav.khurana@cloudeq.com"
+#     Purpose = "terraform task"
+#   }
 }
 
 resource "aws_instance" "web" {
@@ -116,17 +101,9 @@ resource "aws_instance" "web" {
   echo "*** Completed Installing apache2"
   EOF
 
-  tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  tags = var.tags
 
-  volume_tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  volume_tags = var.tags
 }
 
 
@@ -172,11 +149,7 @@ resource "aws_security_group" "raghav_sgroup" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name    = "vpc-raghav"
-    Owner   = "raghav.khurana@cloudeq.com"
-    Purpose = "terraform task"
-  }
+  tags = var.tags
 }
 
 resource "aws_key_pair" "tf-key-pair1" {
