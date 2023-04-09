@@ -14,7 +14,7 @@ SOLUTION:
    
       To host website-->
       ![Screenshot (57)](https://user-images.githubusercontent.com/101244905/230777434-031dcfe9-978e-4a2f-af63-a5013ba73458.png)
-       ![Screenshot (60)](https://user-images.githubusercontent.com/101244905/230777462-898b85b0-6daa-4937-9ffc-6581fa68a44a.png)
+      ![Screenshot (60)](https://user-images.githubusercontent.com/101244905/230777462-898b85b0-6daa-4937-9ffc-6581fa68a44a.png)
       ![Screenshot (58)](https://user-images.githubusercontent.com/101244905/230777478-377f24be-ff76-400f-bc5d-0f661451e56b.png)
      
      And we can see our website running using Public IP of my instance
@@ -32,4 +32,6 @@ SOLUTION:
       ![Screenshot (65)](https://user-images.githubusercontent.com/101244905/230778041-fd98758f-5f8a-4c02-86d2-f93191ebb788.png)
       
       And after the approval, we can run other workflow of apply
+      ![Screenshot (66)](https://user-images.githubusercontent.com/101244905/230778264-17a9c99c-ea87-4189-b4f9-89c93d6d9db4.png)
+
       ![Screenshot (66)](https://user-images.githubusercontent.com/101244905/230778110-a23cda0e-bf39-40d2-bf53-6bb8ca8c31a6.png)
